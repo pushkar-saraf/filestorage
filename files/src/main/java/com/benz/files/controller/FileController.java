@@ -26,7 +26,7 @@ public class FileController {
     }
 
     @GetMapping
-    public ResponseEntity<String> read() {
-        return ResponseEntity.ok("");
+    public ResponseEntity<DataDTO> read() {
+        return ResponseEntity.ok(null);
     }
 }
