@@ -4,8 +4,12 @@ import lombok.Value;
 
 @Value
 public class StatusResponseDTO {
-    public static final StatusResponseDTO SUCCESS = new StatusResponseDTO("Success");
-    public static final StatusResponseDTO FAILED = new StatusResponseDTO("Failed");
+    public static final StatusResponseDTO SUCCESS = new StatusResponseDTO("Success", "");
+
+    public static StatusResponseDTO failed(String message) {
+        return new StatusResponseDTO("Failed", message);
+    }
 
     String status;
+    String message;
 }
