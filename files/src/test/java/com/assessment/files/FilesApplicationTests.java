@@ -1,4 +1,4 @@
-package com.benz.files;
+package com.assessment.files;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
