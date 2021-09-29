@@ -3,7 +3,6 @@ package com.assessment.storage.util;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
     public LocalDate unmarshal(String v) {

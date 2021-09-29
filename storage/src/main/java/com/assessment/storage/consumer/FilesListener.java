@@ -10,7 +10,6 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -29,7 +28,7 @@ public class FilesListener {
 
 
     @RabbitListener(queues = "files")
-    public void listen(String in) throws InvalidProtocolBufferException {
+    public void listen(String in) {
         try {
             DataDTOBuf.Data data = DataDTOBuf.Data.parseFrom(ByteString.copyFromUtf8(in));
             DataDTO dataDTO = new DataDTO();

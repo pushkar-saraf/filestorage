@@ -6,7 +6,6 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
 import org.springframework.stereotype.Service;
 
-import javax.xml.bind.JAXBException;
 import java.io.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -25,7 +24,7 @@ public class CSVService implements FileService {
         try (
                 FileWriter fileWriter = new FileWriter(file.getAbsoluteFile(), false);
                 BufferedWriter writer = new BufferedWriter(fileWriter);
-                CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.builder().build());
+                CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.builder().build())
         ) {
             values.forEach(value -> printDTO(value, csvPrinter));
             printDTO(dto, csvPrinter);
@@ -55,7 +54,7 @@ public class CSVService implements FileService {
              CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.builder()
                      .setIgnoreHeaderCase(true)
                      .setTrim(true)
-                     .build());
+                     .build())
         ) {
             List<DataDTO> result = new ArrayList<>();
             csvParser.getRecords().forEach(record -> {
@@ -78,7 +77,7 @@ public class CSVService implements FileService {
         try (
                 FileWriter fileWriter = new FileWriter(file.getAbsoluteFile(), false);
                 BufferedWriter writer = new BufferedWriter(fileWriter);
-                CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.builder().build());
+                CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.builder().build())
         ) {
             values.forEach(value -> printDTO(value, csvPrinter));
             csvPrinter.flush();

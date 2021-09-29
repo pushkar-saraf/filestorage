@@ -3,7 +3,6 @@ package com.assessment.storage.internal;
 
 import com.assessment.storage.util.LocalDateAdapter;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
