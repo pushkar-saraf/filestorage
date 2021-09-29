@@ -14,6 +14,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 @Value
 @ValidDataDTO(groups = Additional.class)
@@ -24,7 +26,6 @@ public class DataDTO {
     String name;
 
     @NotNull(groups = Basic.class)
-    @JsonFormat(pattern = "dd-MM-yyyy", shape = JsonFormat.Shape.STRING)
     LocalDate dob;
 
     @Min(value = 0, groups = Additional.class)

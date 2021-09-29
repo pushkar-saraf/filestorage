@@ -1,0 +1,12 @@
+syntax = "proto3";
+package files;
+option java_package = "com.benz.files.controller.dto";
+option java_outer_classname = "DataDTOBuf";
+
+message Data {
+  string name = 1;
+  uint32 age = 2;
+  uint64 dob = 3;
+  uint64 salary = 4;
+  string format = 5;
+}
